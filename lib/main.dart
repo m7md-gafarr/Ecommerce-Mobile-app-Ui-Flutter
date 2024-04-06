@@ -2,7 +2,6 @@ import 'package:example_1_ecommerce_onboarding/screen/Login.dart';
 import 'package:example_1_ecommerce_onboarding/screen/ResetPassword.dart';
 import 'package:example_1_ecommerce_onboarding/screen/ResetYourPassword.dart';
 import 'package:example_1_ecommerce_onboarding/screen/SingUp.dart';
-import 'package:example_1_ecommerce_onboarding/screen/Splash.dart';
 import 'package:example_1_ecommerce_onboarding/screen/Introducation.dart';
 import 'package:example_1_ecommerce_onboarding/screen/VerificationCode.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +19,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,7 +26,6 @@ class MyApp extends StatelessWidget {
         // builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
         routes: {
-          "Splash": (context) => const SplachScreen(),
           "Intro": (context) => const IntroducationScreen(),
           "Login": (context) => const LoginScreen(),
           "SingUp": (context) => const SingUpScreen(),
@@ -36,7 +33,7 @@ class MyApp extends StatelessWidget {
           "Verification": (context) => const VerificationCodeScreen(),
           "ResetPassword": (context) => const ResetYourPasswordScreen()
         },
-        initialRoute: "Splash",
+        initialRoute: "Intro",
       ),
     );
   }

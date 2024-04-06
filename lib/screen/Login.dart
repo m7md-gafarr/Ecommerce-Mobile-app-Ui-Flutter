@@ -2,6 +2,7 @@ import 'package:example_1_ecommerce_onboarding/constant/colors.dart';
 import 'package:example_1_ecommerce_onboarding/widget/Logo.dart';
 import 'package:example_1_ecommerce_onboarding/widget/TextFeild.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../widget/Button.dart';
@@ -37,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: (MediaQuery.of(context).size.height) -
-                  (MediaQuery.of(context).size.height / 2 - 40),
+                  (MediaQuery.of(context).size.height / 2 - 160),
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
                 color: Black,
@@ -75,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 30),
                     const TextField_Widget(
-                      hintText: "User-name",
+                      hintText: "User-name or Email",
                       obscureText: false,
                       prefixIcon: Icon(Iconsax.user),
                     ),
@@ -119,11 +120,26 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(height: 5),
                     Button_Widget(
                       text: "Sing In",
-                      onPressed: () {
-                        Navigator.pushNamed(context, "SingUp");
-                      },
+                      onPressed: () {},
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 15),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Divider_widget(),
+                        const Text(
+                          "   Or continue with   ",
+                          style: TextStyle(
+                            color: Wihte,
+                            fontSize: 14,
+                            fontFamily: "Sora",
+                          ),
+                        ),
+                        Divider_widget()
+                      ],
+                    ),
+                    const SizedBox(height: 15),
+                    Social_Widget(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -142,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 Primary_3.withOpacity(.2)),
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, "SIngUp");
+                            Navigator.pushNamed(context, "SingUp");
                           },
                           child: const Text(
                             "Sign Up",
@@ -161,6 +177,53 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget Social(Widget widget) {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Primary_3.withOpacity(.2),
+        backgroundColor: Black,
+        fixedSize: const Size(120, 50),
+        shape: const RoundedRectangleBorder(
+          side: BorderSide(
+            color: Primary_3,
+            width: .5,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(16)),
+        ),
+      ),
+      child: widget,
+    );
+  }
+
+  Widget Social_Widget() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Social(
+          SvgPicture.asset(
+            "assets/icon/Google.svg",
+          ),
+        ),
+        Social(
+          SvgPicture.asset(
+            "assets/icon/Appel.svg",
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget Divider_widget() {
+    return const SizedBox(
+      width: 80,
+      child: Divider(
+        thickness: 1,
+        color: Primary_3,
       ),
     );
   }

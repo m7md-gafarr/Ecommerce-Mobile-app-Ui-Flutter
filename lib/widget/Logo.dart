@@ -9,7 +9,7 @@ class Logo_Widget extends StatelessWidget {
     return Positioned(
       height: MediaQuery.of(context).size.height / 2 - 165,
       left: MediaQuery.of(context).size.width / 2 - 60,
-      child: SvgPicture.asset("assets/icon/logo.svg"),
+      child: SvgPicture.asset("assets/Logo/logo.svg"),
     );
   }
 }

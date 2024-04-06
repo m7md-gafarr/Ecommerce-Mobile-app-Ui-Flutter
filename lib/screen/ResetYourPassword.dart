@@ -159,7 +159,7 @@ class _ResetYourPasswordScreen extends State<ResetYourPasswordScreen> {
                                 "Password has been updated",
                                 style: TextStyle(
                                   color: Wihte,
-                                  fontSize: 18,
+                                  fontSize: 15,
                                   fontFamily: "Sora",
                                 ),
                               ),

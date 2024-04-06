@@ -82,7 +82,7 @@ class _SingUpScreenState extends State<SingUpScreen> {
                     ),
                     const SizedBox(height: 30),
                     const TextField_Widget(
-                      hintText: "User-name",
+                      hintText: "Email",
                       obscureText: false,
                       prefixIcon: Icon(Iconsax.user),
                     ),

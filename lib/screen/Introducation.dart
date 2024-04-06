@@ -38,8 +38,14 @@ class _IntroducationScreen extends State<IntroducationScreen> {
   bool _islastpage = false;
   @override
   void initState() {
-    _pageController = PageController(initialPage: 0);
-    _pageControllerimage = PageController(initialPage: 0);
+    _pageController = PageController(
+      initialPage: 0,
+      viewportFraction: 0.95,
+    );
+    _pageControllerimage = PageController(
+      initialPage: 0,
+      viewportFraction: 0.95,
+    );
     super.initState();
   }
 
@@ -86,7 +92,7 @@ class _IntroducationScreen extends State<IntroducationScreen> {
                 _pageControllerimage.animateToPage(
                   index,
                   duration: const Duration(milliseconds: 500),
-                  curve: Curves.linear,
+                  curve: Curves.easeInOutCubic,
                 );
               },
               controller: _pageController,
@@ -135,12 +141,12 @@ class _IntroducationScreen extends State<IntroducationScreen> {
                   } else {
                     _pageController.nextPage(
                       duration: const Duration(milliseconds: 300),
-                      curve: Curves.ease,
+                      curve: Curves.easeInOutCubic,
                     );
 
                     _pageControllerimage.nextPage(
                       duration: const Duration(milliseconds: 300),
-                      curve: Curves.ease,
+                      curve: Curves.easeInOutCubic,
                     );
                   }
                 },
